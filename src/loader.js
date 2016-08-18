@@ -4,12 +4,12 @@ var CarLot = (function(myLot){
   var fillInventory = function(data) {
     data.forEach(function(thing){
       inventory.push(thing);
-    })
-  }
+    });
+  };
 
   myLot.getInventory = function(){
     return inventory;
-  }
+  };
 
   myLot.loadInventory = function(){
     return new Promise(function(resolve, reject) {
@@ -20,9 +20,9 @@ var CarLot = (function(myLot){
         var data = JSON.parse(event.target.responseText).cars;
         fillInventory(data);
         resolve(inventory);
-      })
-    })
-  }
+      });
+    });
+  };
 
   return myLot;
-})(CarLot || {})
+})(CarLot || {});

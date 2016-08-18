@@ -1,10 +1,10 @@
 "use strict";
 function populatePage (inventory) {
-  var output = document.querySelector(".output")
-  var results = ""
+  var output = document.querySelector(".output");
+  var results = "";
   inventory.forEach(function(car, i){
     if (i % 3 === 0) {
-    results += `<div class="row">`
+    results += `<div class="row">`;
   }
     results += `
     <div class="col-md-4 carCard" style="border-color: ${car.color}">
@@ -16,17 +16,17 @@ function populatePage (inventory) {
     <h3>${car.purchased}</h3>
     <p>${car.description}</p>
     </div>
-    `
+    `;
     if ((i + 1) % 3 === 0) {
-  results += `</div>`
+  results += `</div>`;
   }
-  })
-  output.innerHTML = results
+  });
+  output.innerHTML = results;
 }
 
 CarLot.loadInventory()
 .then(function(dataStuff){
-  populatePage(dataStuff)
+  populatePage(dataStuff);
   CarLot.activateEvents();
 
-})
+});
