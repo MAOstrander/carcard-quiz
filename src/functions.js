@@ -1,3 +1,4 @@
+"use strict";
 CarLot = (function(carLot){
   carLot.resetCards = function(cards){
     cards.forEach(function(card){

@@ -1,3 +1,5 @@
+"use strict";
+
 CarLot = (function(carLot) {
   carLot.activateEvents = function() {
     var cards = document.querySelectorAll(".carCard")

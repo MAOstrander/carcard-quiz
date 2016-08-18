@@ -1,4 +1,4 @@
-
+"use strict";
 function populatePage (inventory) {
   var output = document.querySelector(".output")
   var results = ""

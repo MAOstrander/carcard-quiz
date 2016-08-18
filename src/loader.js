@@ -1,3 +1,4 @@
+"use strict";
 var CarLot = (function(myLot){
   var inventory = [];
   var fillInventory = function(data) {
@@ -16,7 +17,7 @@ var CarLot = (function(myLot){
       loader.open('GET', 'inventory.json');
       loader.send();
       loader.addEventListener('load', function(event){
-        data = JSON.parse(event.target.responseText).cars;
+        var data = JSON.parse(event.target.responseText).cars;
         fillInventory(data);
         resolve(inventory);
       })
