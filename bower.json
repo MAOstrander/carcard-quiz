@@ -1,0 +1,20 @@
+{
+  "name": "carcard-quiz",
+  "homepage": "https://github.com/MAOstrander/carcard-quiz",
+  "authors": [
+    "Mathew Ostrander <mathew.ostrander@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
