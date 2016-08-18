@@ -1,0 +1,31 @@
+{
+  "cars": [
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8,999",
+      "color": "Tomato",
+      "purchased": false,
+      "description": "Well, it runs."
+    },
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8,999",
+      "color": "Tomato",
+      "purchased": false,
+      "description": "Well, it runs."
+    },
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8,999",
+      "color": "Tomato",
+      "purchased": false,
+      "description": "Well, it runs."
+    }
+  ]
+}
