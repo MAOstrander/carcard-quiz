@@ -1,18 +1,18 @@
 "use strict";
+var funUtility = require("./functions");
 
-var CarLot = (function(carLot) {
-  carLot.activateEvents = function() {
-    var cards = document.querySelectorAll(".carCard");
-    cards.forEach(function(card){
-      card.addEventListener("click", function(){
-        var userInput = document.querySelector("#userInput");
-        userInput.value = "";
-        userInput.focus();
-        CarLot.resetCards(cards);
-        CarLot.styleCard(card, "pink");
-        CarLot.mirrorText(card, userInput);
-      });
+var activateEvents = function() {
+  var cards = document.querySelectorAll(".carCard");
+  cards.forEach(function(card){
+    card.addEventListener("click", function(){
+      var userInput = document.querySelector("#userInput");
+      userInput.value = "";
+      userInput.focus();
+      funUtility.resetCards(cards);
+      funUtility.styleCard(card, "yarp");
+      funUtility.bindText(card, userInput);
     });
-  };
-  return carLot;
-})(CarLot);
+  });
+};
+
+module.exports = activateEvents;

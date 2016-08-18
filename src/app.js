@@ -1,32 +1,36 @@
 "use strict";
+
+var loader = require("./loader"),
+    activateEvents = require("./activateEvents");
+
 function populatePage (inventory) {
   var output = document.querySelector(".output");
   var results = "";
-  inventory.forEach(function(car, i){
-    if (i % 3 === 0) {
-    results += `<div class="row">`;
-  }
+  inventory.forEach(function(car, index){
+    if (index % 3 === 0) {
+      results += `<div class="row">`;
+    }
     results += `
     <div class="col-md-4 carCard" style="border-color: ${car.color}">
-    <h2>${car.make}</h2>
-    <h3>${car.model}</h3>
-    <h3>${car.year}</h3>
-    <h3>$${car.price}</h3>
-    <h3>${car.color}</h3>
-    <h3>${car.purchased}</h3>
-    <p>${car.description}</p>
+      <h2>${car.make}</h2>
+      <h3>${car.model}</h3>
+      <h3>${car.year}</h3>
+      <h3>$${car.price}</h3>
+      <h4>${car.color}</h4>
+      <h4>${car.purchased}</h4>
+      <p>${car.description}</p>
     </div>
     `;
-    if ((i + 1) % 3 === 0) {
-  results += `</div>`;
-  }
+
+    if ((index + 1) % 3 === 0) {
+      results += `</div>`;
+    }
   });
   output.innerHTML = results;
 }
 
-CarLot.loadInventory()
+loader.loadInventory()
 .then(function(dataStuff){
   populatePage(dataStuff);
-  CarLot.activateEvents();
-
+  activateEvents();
 });
