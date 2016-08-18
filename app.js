@@ -1,22 +1,32 @@
-function populatePage(inventory) {
-  var outputDiv = document.getElementById("output")
-    inventory.forEach(function(cars) {
-    outputDiv.innerHTML += `
-    <div class="col-md-4 carCard" style="border-color: ${cars.color}">
-      <h1 class="display-2">Make: ${cars.make}</h1>
-      <p>Model: ${cars.model}</p>
-      <p>Year: ${cars.year}</p>
-      <p>Price: ${cars.price}</p>
-      <p>Color: ${cars.color}</p>
-      <p>Available: ${cars.purchased}</p>
-      <p>Description: ${cars.description}</p>
-    </div>`
-    })
 
+function populatePage (inventory) {
+  var output = document.querySelector(".output")
+  var results = ""
+  inventory.forEach(function(car, i){
+    if (i % 3 === 0) {
+    results += `<div class="row">`
   }
+    results += `
+    <div class="col-md-4 carCard" style="border-color: ${car.color}">
+    <h2>${car.make}</h2>
+    <h3>${car.model}</h3>
+    <h3>${car.year}</h3>
+    <h3>$${car.price}</h3>
+    <h3>${car.color}</h3>
+    <h3>${car.purchased}</h3>
+    <p>${car.description}</p>
+    </div>
+    `
+    if ((i + 1) % 3 === 0) {
+  results += `</div>`
+  }
+  })
+  output.innerHTML = results
+}
 
 CarLot.loadInventory()
 .then(function(dataStuff){
   populatePage(dataStuff)
+  CarLot.activateEvents();
 
 })
